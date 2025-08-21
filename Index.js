@@ -63,9 +63,10 @@ app.post('/api/products', async (req, res) => {
     }
   });
 
-const port = process.env.PORT || 4000;
-sequelize.sync().then(() => {
-  app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+  const port = process.env.PORT || 4000;
+
+  sequelize.sync().then(() => {
+    app.listen(port, () => {
+      console.log(`Server running on http://localhost:${port}`);
+    });
   });
-});
